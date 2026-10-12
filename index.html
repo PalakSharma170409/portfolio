@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palak Sharma | AI Sorceress & B.Tech CSE Scholar</title>
+  <meta name="description" content="Portfolio of Palak Sharma, 17-year-old B.Tech CSE student at JECRC University, aspiring AI developer, book lover, singer, dancer, and guitarist. Harry Potter themed.">
+  
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Cormorant Garamond, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lumos-active">
+  <!-- Interactive Wand Spark Canvas Overlay -->
+  <canvas id="wand-canvas"></canvas>
+
+  <!-- Ambient Magical Floating Stars / Dust Canvas -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- Floating Golden Snitch Easter Egg -->
+  <div id="golden-snitch" title="Catch the Golden Snitch!">
+    <div class="snitch-wing wing-left"></div>
+    <div class="snitch-orb"></div>
+    <div class="snitch-wing wing-right"></div>
+    <span class="snitch-tooltip">Catch me!</span>
+  </div>
+
+  <!-- Audio Chime Synth Indicator Toast -->
+  <div id="magic-toast" class="magic-toast hidden"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="hogwarts-nav" id="main-nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-crest">⚡</span>
+        <div class="brand-text">
+          <span class="brand-name">Palak Sharma</span>
+          <span class="brand-subtitle">AI Arcanist • 17 Y/O</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links">
+        <a href="#about" class="nav-link"><span class="nav-rune">📜</span> Acceptance Letter</a>
+        <a href="#academics" class="nav-link"><span class="nav-rune">🏛️</span> Academics</a>
+        <a href="#skills" class="nav-link"><span class="nav-rune">🪄</span> Spellbook</a>
+        <a href="#hobbies" class="nav-link"><span class="nav-rune">🌌</span> Passions</a>
+        <a href="#spells-room" class="nav-link"><span class="nav-rune">🔮</span> Room of Req.</a>
+        <a href="resume.html" target="_blank" class="nav-link"><span class="nav-rune">📄</span> Resume</a>
+        <a href="#contact" class="nav-link cta-owl"><span class="nav-rune">✉️</span> Send Owl</a>
+      </nav>
+
+      <!-- Nav Magical Controls -->
+      <div class="nav-controls">
+        <button id="spell-sound-btn" class="magical-btn-icon" title="Toggle Magical Chimes (Web Audio)" aria-label="Toggle Sound">
+          <span class="icon-glyph">🔔</span>
+        </button>
+        <button id="lumos-toggle-btn" class="magical-btn-icon" title="Toggle Lumos / Nox (Glow / Deep Night)" aria-label="Toggle Lumos">
+          <span class="icon-glyph">✨</span>
+          <span class="lumos-text">Lumos</span>
+        </button>
+        <button id="mobile-menu-btn" class="magical-btn-icon mobile-only" aria-label="Open Navigation">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <a href="#about" class="mobile-link">📜 Hogwarts Letter</a>
+      <a href="#academics" class="mobile-link">🏛️ Academic Scrolls</a>
+      <a href="#skills" class="mobile-link">🪄 AI & Tech Spellbook</a>
+      <a href="#hobbies" class="mobile-link">🌌 Passions & Hobbies</a>
+      <a href="#spells-room" class="mobile-link">🔮 Room of Requirement</a>
+      <a href="resume.html" target="_blank" class="mobile-link">📄 Printable Resume</a>
+      <a href="#contact" class="mobile-link">✉️ Send an Owl (Contact)</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-banner-bg" style="background-image: url('assets/images/hero-banner.jpg');"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-content">
+      <div class="sorting-ribbon">
+        <span class="ribbon-sparkle">✦</span>
+        <span>House of Ravenclaw • Mind, Magic & Neural Networks</span>
+        <span class="ribbon-sparkle">✦</span>
+      </div>
+
+      <h1 class="hero-title">
+        Palak Sharma
+      </h1>
+
+      <p class="hero-tagline">
+        17-Year-Old B.Tech CSE Scholar & Aspiring AI Developer
+      </p>
+
+      <div class="hero-badges">
+        <div class="magic-pill">
+          <span class="pill-icon">🎓</span>
+          <span>JECRC University • CSE Core</span>
+        </div>
+        <div class="magic-pill">
+          <span class="pill-icon">📜</span>
+          <span>12th Grade: 89% Distinction</span>
+        </div>
+        <div class="magic-pill">
+          <span class="pill-icon">🤖</span>
+          <span>Future AI Engineer</span>
+        </div>
+      </div>
+
+      <p class="hero-bio-snippet">
+        <em>"Words and code are, in my not-so-humble opinion, our most inexhaustible sources of magic."</em><br>
+        Currently brewing intelligence with algorithms, data structures, and foundational neural charms.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-potter btn-primary">
+          <span class="btn-magic-glow"></span>
+          <span class="btn-icon">🦉</span>
+          <span>Send an Owl Post</span>
+        </a>
+        <a href="#about" class="btn-potter btn-secondary">
+          <span class="btn-icon">📜</span>
+          <span>Open Acceptance Letter</span>
+        </a>
+        <a href="resume.html" target="_blank" class="btn-potter btn-secondary">
+          <span class="btn-icon">📄</span>
+          <span>View Resume Scroll</span>
+        </a>
+        <button id="quick-cast-btn" class="btn-potter btn-tertiary">
+          <span class="btn-icon">🪄</span>
+          <span>Cast Lumos!</span>
+        </button>
+      </div>
+
+      <!-- Quick Scroll Indicator -->
+      <a href="#about" class="scroll-down-indicator" aria-label="Scroll Down">
+        <span class="scroll-feather">🪶</span>
+        <span class="scroll-text">Descend to Chambers</span>
+        <span class="scroll-arrow">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 1: The Hogwarts Acceptance Letter (About Palak) -->
+  <section id="about" class="about-section section-padding">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="sub-header-rune">⚡ THE DECREE OF ACCEPTANCE ⚡</span>
+        <h2 class="section-title">The Hogwarts Letter</h2>
+        <p class="section-desc">Delivered by Owl to Miss Palak Sharma, embarking on her voyage into Computer Science & AI.</p>
+      </div>
+
+      <div class="letter-layout">
+        <!-- Avatar & Character Card -->
+        <div class="avatar-card-wrapper">
+          <div class="avatar-card">
+            <div class="avatar-frame">
+              <img src="assets/images/palak-avatar.jpg" alt="Palak Sharma - AI Sorceress" class="avatar-img" onerror="this.src='assets/images/hero-banner.jpg'">
+              <div class="avatar-crest-badge">🦅 Ravenclaw</div>
+            </div>
+            <div class="avatar-info">
+              <h3 class="avatar-name">Palak Sharma</h3>
+              <p class="avatar-meta">17 Years Old • Tech Alchemist</p>
+              <div class="avatar-divider">✦ ⚡ ✦</div>
+              <p class="avatar-quote">
+                "Driven by curiosity, fueled by logic, and passionate about crafting AI that empowers humanity."
+              </p>
+              <div class="avatar-stats">
+                <div class="stat-box">
+                  <span class="stat-number">89%</span>
+                  <span class="stat-label">Class XII Score</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">1st Yr</span>
+                  <span class="stat-label">B.Tech CSE Core</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">AI</span>
+                  <span class="stat-label">Career Goal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Parchment Letter -->
+        <div class="parchment-letter-wrapper">
+          <div class="parchment-letter">
+            <div class="parchment-corner top-left"></div>
+            <div class="parchment-corner top-right"></div>
+            <div class="parchment-corner bottom-left"></div>
+            <div class="parchment-corner bottom-right"></div>
+
+            <div class="letter-seal">
+              <div class="wax-seal" title="Hogwarts Seal">
+                <span class="wax-crest">H</span>
+              </div>
+            </div>
+
+            <div class="letter-header">
+              <h3 class="letter-school-name">HOGWARTS SCHOOL</h3>
+              <p class="letter-subhead">of Witchcraft, Wizardry & Computer Science</p>
+              <p class="letter-motto"><em>"Draco Dormiens Nunquam Titillandus • Nullius in Verba"</em></p>
+            </div>
+
+            <div class="letter-salutation">
+              <strong>Dear Miss Palak Sharma,</strong><br>
+              <span class="recipient-address">The Department of Computer Science & Engineering,<br>JECRC University, Jaipur</span>
+            </div>
+
+            <div class="letter-body">
+              <p>
+                We are immensely pleased to recognize your brilliant admission into the profound realm of <strong>Computer Science & Engineering (Core)</strong>. At just <strong>17 years old</strong>, you stand at the threshold where timeless curiosity meets modern computational alchemy.
+              </p>
+              <p>
+                Having conquered your 12th standard with an exemplary <strong>89% distinction</strong>, you have demonstrated the intellect of a Ravenclaw, the determination of a Gryffindor, and the unwavering discipline required to unravel the deepest mysteries of algorithms.
+              </p>
+              <p>
+                Your chosen quest—<strong>Artificial Intelligence Development</strong>—is the most enchanted frontier of our era. Transforming raw logic and mathematical tensors into adaptive, sentient-like intelligence is nothing short of conjuring light from the dark void.
+              </p>
+              <p>
+                May your quills remain sharp, your neural weights converge gracefully, and your spirit never cease to explore books, music, and the boundless horizons of science.
+              </p>
+            </div>
+
+            <div class="letter-signoff">
+              <p>Yours faithfully,</p>
+              <div class="letter-signature">Minerva McGonagall</div>
+              <p class="letter-title">Deputy Headmistress & Chair of Advanced Algorithmic Transfiguration</p>
+            </div>
+
+            <div class="parchment-footnote">
+              ⚡ <em>"I solemnly swear that I am up to great innovations."</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Academic Scrolls & Milestones -->
+  <section id="academics" class="academics-section section-padding">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="sub-header-rune">🏛️ THE HALL OF ACADEMIC RECORDS 🏛️</span>
+        <h2 class="section-title">Academic Milestones</h2>
+        <p class="section-desc">Foundational knowledge and scholarly achievements paving the road to AI mastery.</p>
+      </div>
+
+      <div class="academic-grid">
+        <!-- Milestone 1: JECRC University -->
+        <div class="academic-scroll-card">
+          <div class="scroll-crest">🎓</div>
+          <div class="scroll-period">2026 — Present • Freshman</div>
+          <h3 class="scroll-degree">B.Tech in Computer Science & Engineering (Core)</h3>
+          <h4 class="scroll-institution">JECRC University</h4>
+          <p class="scroll-description">
+            Immersed in core computing sciences: foundational algorithms, data structures, object-oriented paradigms, computer systems, and problem-solving. Actively building a rock-solid base to spearhead machine learning models and deep neural architectures.
+          </p>
+          <ul class="scroll-highlights">
+            <li><span>✦</span> Specialization track directed toward Artificial Intelligence</li>
+            <li><span>✦</span> Hands-on programming & algorithmic reasoning</li>
+            <li><span>✦</span> Active participation in university tech workshops & coding circles</li>
+          </ul>
+          <div class="scroll-badge">Current Scholarly Odyssey</div>
+        </div>
+
+        <!-- Milestone 2: 12th Standard Excellence -->
+        <div class="academic-scroll-card featured-milestone">
+          <div class="scroll-crest">📜</div>
+          <div class="scroll-period">Senior Secondary Examination</div>
+          <h3 class="scroll-degree">Senior Secondary (Class XII)</h3>
+          <h4 class="scroll-institution">High Academic Distinction</h4>
+          <div class="score-callout">
+            <span class="score-number">89%</span>
+            <span class="score-badge">First Class with Distinction</span>
+          </div>
+          <p class="scroll-description">
+            Achieved an outstanding 89% score, showcasing sustained academic rigour, deep analytical thinking in Mathematics & Science, and dedication that sets the stage for advanced engineering problems.
+          </p>
+          <ul class="scroll-highlights">
+            <li><span>✦</span> Robust quantitative and mathematical foundations</li>
+            <li><span>✦</span> Balanced academic excellence alongside creative pursuits</li>
+            <li><span>✦</span> Logical deduction & problem-solving aptitudes</li>
+          </ul>
+          <div class="scroll-badge golden">Merit & Scholastic Rigor</div>
+        </div>
+
+        <!-- Milestone 3: AI Development Roadmap -->
+        <div class="academic-scroll-card">
+          <div class="scroll-crest">🔮</div>
+          <div class="scroll-period">Future Horizon • 2026 & Beyond</div>
+          <h3 class="scroll-degree">Artificial Intelligence Development</h3>
+          <h4 class="scroll-institution">Self-Directed Learning & Research</h4>
+          <p class="scroll-description">
+            Channeling daily passion into modern AI disciplines: Python programming, data analysis, deep learning theory, natural language processing, and generative AI systems.
+          </p>
+          <ul class="scroll-highlights">
+            <li><span>✦</span> Training custom machine learning classifiers & neural models</li>
+            <li><span>✦</span> Exploring computer vision, NLP & prompt orchestration</li>
+            <li><span>✦</span> Building real-world AI applications to solve everyday human challenges</li>
+          </ul>
+          <div class="scroll-badge">The Ultimate Ambition</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The Spellbook of Skills -->
+  <section id="skills" class="skills-section section-padding">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="sub-header-rune">🪄 CODEX OF INCANTATIONS 🪄</span>
+        <h2 class="section-title">The Tech Spellbook</h2>
+        <p class="section-desc">Skills, tools, and technical spells Palak is cultivating on her developer journey.</p>
+      </div>
+
+      <!-- Spell Category Filter Buttons -->
+      <div class="spell-filters">
+        <button class="filter-btn active" data-filter="all">All Spells</button>
+        <button class="filter-btn" data-filter="ai">AI & Data Charms</button>
+        <button class="filter-btn" data-filter="core">Core Programming</button>
+        <button class="filter-btn" data-filter="web">Web Enchantments</button>
+        <button class="filter-btn" data-filter="tools">Developer Potions</button>
+      </div>
+
+      <div class="spells-grid">
+        <!-- Spell 1: Artificial Intelligence -->
+        <div class="spell-card" data-category="ai">
+          <div class="spell-icon-box">🧠</div>
+          <div class="spell-meta">
+            <span class="spell-incantation">Cogito Automata</span>
+            <span class="spell-tier">Aspiring Specialty</span>
+          </div>
+          <h3 class="spell-name">Artificial Intelligence & ML</h3>
+          <p class="spell-desc">
+            Understanding neural network topologies, predictive algorithms, data training pipelines, and intelligent decision systems.
+          </p>
+          <div class="spell-bar-container">
+            <div class="spell-bar-label"><span>Focus & Mastery</span><span>In Active Study</span></div>
+            <div class="spell-progress"><div class="spell-progress-fill fill-ai" style="width: 75%;"></div></div>
+          </div>
+          <div class="spell-tags">
+            <span>Machine Learning</span>
+            <span>Neural Nets</span>
+            <span>AI Concepts</span>
+            <span>Model Logic</span>
+          </div>
+        </div>
+
+        <!-- Spell 2: Python Language -->
+        <div class="spell-card" data-category="ai">
+          <div class="spell-icon-box">🐍</div>
+          <div class="spell-meta">
+            <span class="spell-incantation">Serpenscript</span>
+            <span class="spell-tier">Core Language</span>
+          </div>
+          <h3 class="spell-name">Python Programming</h3>
+          <p class="spell-desc">
+            The lingua franca of modern artificial intelligence. Writing clean scripts, working with data structures, automation, and libraries.
+          </p>
+          <div class="spell-bar-container">
+            <div class="spell-bar-label"><span>Proficiency</span><span>Intermediate</span></div>
+            <div class="spell-progress"><div class="spell-progress-fill fill-python" style="width: 78%;"></div></div>
+          </div>
+          <div class="spell-tags">
+            <span>Python 3</span>
+            <span>OOP</span>
+            <span>Data Wrangling</span>
+            <span>Automation</span>
+          </div>
+        </div>
+
+        <!-- Spell 3: C / C++ & DSA -->
+        <div class="spell-card" data-category="core">
+          <div class="spell-icon-box">⚡</div>
+          <div class="spell-meta">
+            <span class="spell-incantation">Alohomora Memoria</span>
+            <span class="spell-tier">B.Tech Foundation</span>
+          </div>
+          <h3 class="spell-name">C / C++ & Algorithms</h3>
+          <p class="spell-desc">
+            Mastering computational speed, memory pointers, time complexity, recursion, and core data structures (Arrays, Stacks, Queues, Trees).
+          </p>
+          <div class="spell-bar-container">
+            <div class="spell-bar-label"><span>Proficiency</span><span>Foundational / Core</span></div>
+            <div class="spell-progress"><div class="spell-progress-fill fill-cpp" style="width: 80%;"></div></div>
+          </div>
+          <div class="spell-tags">
+            <span>C++</span>
+            <span>DSA</span>
+            <span>Pointers</span>
+            <span>Problem Solving</span>
+          </div>
+        </div>
+
+        <!-- Spell 4: Web Technologies -->
+        <div class="spell-card" data-category="web">
+          <div class="spell-icon-box">🌐</div>
+          <div class="spell-meta">
+            <span class="spell-incantation">Wingardium Leviosa UI</span>
+            <span class="spell-tier">Frontend Charm</span>
+          </div>
+          <h3 class="spell-name">Web Development (HTML & CSS)</h3>
+          <p class="spell-desc">
+            Sculpting responsive, beautiful interactive web pages with modern CSS, semantic HTML5, animations, and clean responsive layouts.
+          </p>
+          <div class="spell-bar-container">
+            <div class="spell-bar-label"><span>Proficiency</span><span>Proficient</span></div>
+            <div class="spell-progress"><div class="spell-progress-fill fill-web" style="width: 82%;"></div></div>
+          </div>
+          <div class="spell-tags">
+            <span>HTML5</span>
+            <span>CSS3 / Flex / Grid</span>
+            <span>JavaScript Basics</span>
+            <span>Responsive Design</span>
+          </div>
+        </div>
+
+        <!-- Spell 5: Git & GitHub -->
+        <div class="spell-card" data-category="tools">
+          <div class="spell-icon-box">🐙</div>
+          <div class="spell-meta">
+            <span class="spell-incantation">Accio Repository</span>
+            <span class="spell-tier">Developer Potion</span>
+          </div>
+          <h3 class="spell-name">Git & Version Control</h3>
+          <p class="spell-desc">
+            Tracking code evolution, committing changes, branch management, and showcasing open source spells on GitHub.
+          </p>
+          <div class="spell-bar-container">
+            <div class="spell-bar-label"><span>Proficiency</span><span>Active Practice</span></div>
+            <div class="spell-progress"><div class="spell-progress-fill fill-git" style="width: 72%;"></div></div>
+          </div>
+          <div class="spell-tags">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Version Control</span>
+            <span>Collaboration</span>
+          </div>
+        </div>
+
+        <!-- Spell 6: Logic, Math & Analytical Thinking -->
+        <div class="spell-card" data-category="core">
+          <div class="spell-icon-box">🔮</div>
+          <div class="spell-meta">
+            <span class="spell-incantation">Felix Felicis Intellectus</span>
+            <span class="spell-tier">Cognitive Prowess</span>
+          </div>
+          <h3 class="spell-name">Discrete Math & Logic</h3>
+          <p class="spell-desc">
+            Linear algebra foundations, probability essentials, propositional calculus, and logical deduction underpinning machine learning algorithms.
+          </p>
+          <div class="spell-bar-container">
+            <div class="spell-bar-label"><span>Proficiency</span><span>Advanced Academic</span></div>
+            <div class="spell-progress"><div class="spell-progress-fill fill-logic" style="width: 85%;"></div></div>
+          </div>
+          <div class="spell-tags">
+            <span>Calculus</span>
+            <span>Linear Algebra</span>
+            <span>Probability</span>
+            <span>Boolean Logic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Beyond the Spellbook (Passions & Hobbies) -->
+  <section id="hobbies" class="hobbies-section section-padding">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="sub-header-rune">🌌 THE MULTIVERSE OF PASSIONS 🌌</span>
+        <h2 class="section-title">Beyond the Spellbook</h2>
+        <p class="section-desc">When the terminal sleeps, Palak breathes life into literature, rhythm, song, and music.</p>
+      </div>
+
+      <div class="hobbies-grid">
+        <!-- Hobby 1: Reading Books -->
+        <div class="hobby-card">
+          <div class="hobby-ambient-glow glow-books"></div>
+          <div class="hobby-icon-wrap">
+            <span class="hobby-icon">📚</span>
+          </div>
+          <span class="hobby-flair">The Restricted Section</span>
+          <h3 class="hobby-title">Reading Books</h3>
+          <p class="hobby-desc">
+            An insatiable reader of captivating fiction, deep philosophy, and pioneering science. Books expand perspectives, ignite boundless creativity, and provide quiet solace for deep reflection.
+          </p>
+          <div class="hobby-quote">
+            <em>"A reader lives a thousand lives before he dies."</em>
+          </div>
+          <div class="hobby-traits">
+            <span class="trait-tag">Deep Focus</span>
+            <span class="trait-tag">Imagination</span>
+            <span class="trait-tag">Curiosity</span>
+          </div>
+        </div>
+
+        <!-- Hobby 2: Singing -->
+        <div class="hobby-card">
+          <div class="hobby-ambient-glow glow-singing"></div>
+          <div class="hobby-icon-wrap">
+            <span class="hobby-icon">🎤</span>
+          </div>
+          <span class="hobby-flair">The Siren's Harmony</span>
+          <h3 class="hobby-title">Vocal Singing</h3>
+          <p class="hobby-desc">
+            Expressing raw emotions and harmony through singing. Vocal music mirrors programming: pitch, tempo, and rhythm come together into a coherent, soul-stirring composition.
+          </p>
+          <div class="hobby-quote">
+            <em>"Where words fail, melody speaks with unfiltered magic."</em>
+          </div>
+          <div class="hobby-traits">
+            <span class="trait-tag">Harmony</span>
+            <span class="trait-tag">Expression</span>
+            <span class="trait-tag">Emotional Resonance</span>
+          </div>
+        </div>
+
+        <!-- Hobby 3: Dancing -->
+        <div class="hobby-card">
+          <div class="hobby-ambient-glow glow-dancing"></div>
+          <div class="hobby-icon-wrap">
+            <span class="hobby-icon">💃</span>
+          </div>
+          <span class="hobby-flair">The Rhythmic Incantation</span>
+          <h3 class="hobby-title">Dancing</h3>
+          <p class="hobby-desc">
+            Channeling vibrant energy, grace, and spontaneity into rhythmic movement. Dancing instills physical agility, stage confidence, and joyful self-expression.
+          </p>
+          <div class="hobby-quote">
+            <em>"Dance is the hidden language of the soul."</em>
+          </div>
+          <div class="hobby-traits">
+            <span class="trait-tag">Grace & Energy</span>
+            <span class="trait-tag">Rhythm</span>
+            <span class="trait-tag">Discipline</span>
+          </div>
+        </div>
+
+        <!-- Hobby 4: Learning Guitar -->
+        <div class="hobby-card">
+          <div class="hobby-ambient-glow glow-guitar"></div>
+          <div class="hobby-icon-wrap">
+            <span class="hobby-icon">🎸</span>
+          </div>
+          <span class="hobby-flair">The Bard's Acoustic Chords</span>
+          <h3 class="hobby-title">Learning Guitar</h3>
+          <p class="hobby-desc">
+            Currently mastering acoustic chords, strumming rhythms, and finger agility. Every chord progression learned is a victory in patience, muscle memory, and artistic discovery.
+          </p>
+          <div class="hobby-quote">
+            <em>"Six strings, infinite melodies waiting to be unlocked."</em>
+          </div>
+          <div class="hobby-traits">
+            <span class="trait-tag">Fretboard Practice</span>
+            <span class="trait-tag">Patience</span>
+            <span class="trait-tag">Acoustic Soul</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: The Room of Requirement (Interactive Magic Room) -->
+  <section id="spells-room" class="spells-room-section section-padding">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="sub-header-rune">🔮 THE CHAMBER OF MYSTERIES 🔮</span>
+        <h2 class="section-title">The Room of Requirement</h2>
+        <p class="section-desc">Cast interactive spells, consult the Sorting Hat, or generate magical affirmations!</p>
+      </div>
+
+      <div class="magic-room-container">
+        <!-- Interactive Spell Caster -->
+        <div class="magic-subcard wand-chamber">
+          <div class="subcard-header">
+            <span class="subcard-icon">🪄</span>
+            <div>
+              <h3>Wand Duel & Spellcaster</h3>
+              <p>Click any spell incantation to cast it on screen!</p>
+            </div>
+          </div>
+          <div class="spells-button-rack">
+            <button class="spell-cast-btn" data-spell="lumos">
+              <span class="btn-incant">Lumos!</span>
+              <span class="btn-effect">Radiant Golden Light</span>
+            </button>
+            <button class="spell-cast-btn" data-spell="patronum">
+              <span class="btn-incant">Expecto Patronum!</span>
+              <span class="btn-effect">Silvery Ethereal Mist</span>
+            </button>
+            <button class="spell-cast-btn" data-spell="leviosa">
+              <span class="btn-incant">Wingardium Leviosa!</span>
+              <span class="btn-effect">Levitating Feathers</span>
+            </button>
+            <button class="spell-cast-btn" data-spell="alohomora">
+              <span class="btn-incant">Alohomora!</span>
+              <span class="btn-effect">Unlocks Tech Portal</span>
+            </button>
+          </div>
+          <div class="spell-log-box" id="spell-log">
+            <span class="log-cursor">⚡</span> Wand ready. Select an incantation to channel your magic.
+          </div>
+        </div>
+
+        <!-- Sorting Hat Wisdom -->
+        <div class="magic-subcard sorting-chamber">
+          <div class="subcard-header">
+            <span class="subcard-icon">🧙‍♂️</span>
+            <div>
+              <h3>The Sorting Hat's Oracle</h3>
+              <p>Receive custom words of wisdom for Palak's tech journey.</p>
+            </div>
+          </div>
+          <div class="sorting-hat-stage">
+            <div class="sorting-hat-anim">
+              <span class="hat-emoji">🎩</span>
+            </div>
+            <blockquote id="sorting-quote" class="sorting-quote">
+              "Ah, Palak Sharma! Wit beyond measure is man's greatest treasure. With Ravenclaw curiosity and an iron will, artificial intelligence shall bend to your algorithms!"
+            </blockquote>
+            <button id="ask-hat-btn" class="btn-potter btn-secondary">
+              <span>Ask the Sorting Hat Again</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Send an Owl Post (Contact Me) -->
+  <section id="contact" class="contact-section section-padding">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="sub-header-rune">🦉 OWL POST EXPRESS 🦉</span>
+        <h2 class="section-title">Send an Owl to Palak</h2>
+        <p class="section-desc">Have a collaboration idea, tech question, mentorship advice, or just want to talk AI and books? My owl is ready.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Direct Magic Channels -->
+        <div class="contact-info-cards">
+          <!-- Gmail Channel Card -->
+          <div class="owl-channel-card email-card">
+            <div class="channel-icon-wrap">
+              <span class="channel-icon">📧</span>
+            </div>
+            <div class="channel-details">
+              <span class="channel-label">Official Owl Post (Email)</span>
+              <h3 class="channel-value" id="email-text">sharmapalak2549@gmail.com</h3>
+              <p class="channel-hint">Direct mail dispatch for opportunities & collaborations</p>
+            </div>
+            <div class="channel-actions">
+              <button class="btn-copy-owl" id="copy-email-btn" title="Copy to clipboard">
+                <span class="btn-copy-icon">📋</span>
+                <span class="btn-copy-text">Copy Email</span>
+              </button>
+              <a href="mailto:sharmapalak2549@gmail.com?subject=Hello%20Palak!%20Connecting%20from%20Portfolio" class="btn-open-owl" title="Dispatch email directly">
+                <span>Dispatch ✉️</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- LinkedIn Channel Card -->
+          <div class="owl-channel-card linkedin-card">
+            <div class="channel-icon-wrap">
+              <span class="channel-icon">💼</span>
+            </div>
+            <div class="channel-details">
+              <span class="channel-label">Professional Wizarding Network</span>
+              <h3 class="channel-value">palak-sharma-a172ba42b</h3>
+              <p class="channel-hint">Connect with Palak on LinkedIn for career updates & tech posts</p>
+            </div>
+            <div class="channel-actions">
+              <a href="https://www.linkedin.com/in/palak-sharma-a172ba42b" target="_blank" rel="noopener noreferrer" class="btn-linkedin-owl">
+                <span>View LinkedIn Profile ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Scholar Summary Card -->
+          <div class="scholar-summary-card">
+            <div class="summary-top">
+              <span class="summary-shield">⚡</span>
+              <h4>Miss Palak Sharma</h4>
+            </div>
+            <p><strong>Age:</strong> 17 Years Old</p>
+            <p><strong>Institution:</strong> JECRC University, Jaipur</p>
+            <p><strong>Branch:</strong> B.Tech Computer Science & Engineering (Core)</p>
+            <p><strong>12th Grade:</strong> 89% Distinction</p>
+            <p><strong>Aspiration:</strong> AI Developer & Machine Learning Engineer</p>
+            <p><strong>Hobbies:</strong> Reading, Singing, Dancing & Guitar</p>
+            <div class="status-indicator">
+              <span class="status-dot"></span> Open for Student Mentorship, Tech Projects & Hackathons
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Owl Dispatch Scroll Form -->
+        <div class="owl-scroll-form-wrapper">
+          <div class="scroll-form-container">
+            <div class="scroll-top-wooden-rod"></div>
+            <div class="scroll-form-body">
+              <div class="form-seal-badge">✉️ OWL POST PARCHMENT</div>
+              <h3 class="form-title">Dispatch an Enchanted Message</h3>
+              <p class="form-subtitle">Fill in this parchment scroll to send a direct owl to Palak's inbox.</p>
+
+              <form id="owl-dispatch-form" class="owl-form">
+                <div class="form-field">
+                  <label for="sender-name">Your Full Name (Wizard / Witch / Muggle)</label>
+                  <input type="text" id="sender-name" name="name" required placeholder="e.g. Harry Potter / Ada Lovelace">
+                </div>
+
+                <div class="form-field">
+                  <label for="sender-email">Your Owl Address (Email)</label>
+                  <input type="email" id="sender-email" name="email" required placeholder="e.g. yourname@domain.com">
+                </div>
+
+                <div class="form-field">
+                  <label for="message-subject">Subject of Scroll</label>
+                  <input type="text" id="message-subject" name="subject" required placeholder="e.g. AI Project Collaboration / Mentorship / Greetings">
+                </div>
+
+                <div class="form-field">
+                  <label for="message-content">Your Message</label>
+                  <textarea id="message-content" name="message" rows="4" required placeholder="Inscribe your enchanted message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-potter btn-primary form-submit-btn">
+                  <span class="btn-icon">🦉</span>
+                  <span>Release Owl Post Now</span>
+                </button>
+              </form>
+            </div>
+            <div class="scroll-bottom-wooden-rod"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer: The Marauder's Map -->
+  <footer class="marauders-footer">
+    <div class="footer-container">
+      <div class="footprints-track">
+        <span class="footprint fp-1">👣</span>
+        <span class="footprint fp-2">👣</span>
+        <span class="footprint fp-3">👣</span>
+        <span class="footprint fp-4">👣</span>
+      </div>
+
+      <div class="marauders-phrase-box" id="marauders-toggle-box" title="Click to seal the map!">
+        <p class="marauders-phrase" id="marauders-text">
+          "I solemnly swear that I am up to no good."
+        </p>
+        <span class="toggle-hint">(Click to Manage Mischief)</span>
+      </div>
+
+      <div class="footer-content">
+        <p class="footer-copyright">
+          Crafted with 🪄 Magic, Code, and Passion for <strong>Palak Sharma</strong> • 2026
+        </p>
+        <p class="footer-sub">
+          B.Tech CSE Core @ JECRC University • Aspiring AI Sorceress • Jaipur, India
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="mailto:sharmapalak2549@gmail.com" class="footer-link">Email</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/palak-sharma-a172ba42b" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <span>•</span>
+        <a href="#hero" class="footer-link">Back to Top ⚡</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
